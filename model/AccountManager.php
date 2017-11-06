@@ -36,6 +36,19 @@ class AccountManager
         return $accounts;
     }
 
+    /** get the account selectionned
+     *@param object
+     *@return object
+     */
+    public function getThisAccount($account)
+    {
+        $reponse = $this->bdd->prepare('SELECT * FROM Accounts WHERE idAccount = :id');
+        $reponse->execute(['id' => $account->getIdAccount()]);
+        $donnees = $reponse->fetch(PDO::FETCH_ASSOC);
+        $account = new Account($donnees);
+        return $account;
+    }
+
     /** add an account in the database
      *@param Object
      *@return empty
@@ -52,7 +65,7 @@ class AccountManager
 
 
         /** update an account in database
-         *@param Object
+         *@param object
          *@return empty
          */
         public function updateAccount($account)
@@ -68,7 +81,7 @@ class AccountManager
         }
 
         /** delete an accountin database
-         *@param Object
+         *@param object
          *@return empty
          */
         public function deleteAccount($account)
