@@ -4,14 +4,30 @@
  */
 class Account
 {
-protected $idAccount ;
-protected $nameUser ;
-protected $sold;
-protected $dateModif;
-  function __construct(array $donnees)
-  {
-    $this->hydrate($donnees);
-  }
+    protected $idAccount ;
+    protected $nameUser ;
+    protected $sold;
+    protected $dateModif;
+    public function __construct(array $donnees)
+    {
+        $this->hydrate($donnees);
+    }
+
+    /**
+     * Set the value of all the attributes
+     *
+     * @param array donnees
+     */
+
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $value) {
+            $method = "set" . ucfirst($key) ;
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
 
     /**
      * Get the value of Id Account
@@ -32,7 +48,7 @@ protected $dateModif;
      */
     public function setIdAccount($idAccount)
     {
-      $idAccount = (int) $idAccount;
+        $idAccount = (int) $idAccount;
         $this->idAccount = $idAccount;
 
         return $this;
@@ -57,12 +73,11 @@ protected $dateModif;
      */
     public function setNameUser($nameUser)
     {
-      if (is_string($nameUser) && strlen($nameUser) < 50) {
-        $this->nameUser = $nameUser;
+        if (is_string($nameUser) && strlen($nameUser) < 50) {
+            $this->nameUser = $nameUser;
 
-        return $this;
-      }
-
+            return $this;
+        }
     }
 
     /**
@@ -84,13 +99,15 @@ protected $dateModif;
      */
     public function setSold($sold)
     {
-      $sold = (int) $sold;
-      if ($sold >= -200) {
-        $this->sold = $sold;
+        $sold = (int) $sold;
+        if ($sold >= -200) {
+            $this->sold = $sold;
 
-        return $this;
-      }
-
+            return $this;
+        } elseif ($sold <= -200) {
+          $error ="Le plafond est limité à 200 €";
+          return $error;
+        }
     }
 
     /**
@@ -111,12 +128,9 @@ protected $dateModif;
      * @return self
      */
     public function setDateModif($dateModif)
-  {
+    {
         $this->dateModif = $dateModif;
 
         return $this;
     }
-
 }
-
- ?>
