@@ -37,7 +37,7 @@ class AccountManager
     }
 
     /** add an account in the database
-     *@param array
+     *@param Object
      *@return empty
      */
     public function addAccount($account)
@@ -49,4 +49,21 @@ class AccountManager
 
 ));
     }
+
+
+        /** update an account in database
+         *@param Object
+         *@return empty
+         */
+        public function updateAccount($account)
+        {
+            $reponse=$this->bdd->prepare('UPDATE Accounts set nameUser=:nameUser,sold=:sold,dateModif=NOW() WHERE idAccount=:id');
+            $reponse->execute(array(
+    'id' => $account->getIdAccount(),
+    'nameUser' => $account->getNameUser(),
+    'sold' => $account->getSold(),
+
+
+      ));
+        }
 }
