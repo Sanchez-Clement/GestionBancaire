@@ -4,35 +4,49 @@
  */
 class AccountManager
 {
-  protected $bdd;
+    protected $bdd;
 
-  public function __construct($bdd)
-  {
-      $this->setBdd($bdd);
-  }
-
-  /** Define bdd
-   *@param (bdd) Object PDO
-   *@return no return
-   */
-  public function setBdd($bdd)
-  {
-      $this->bdd=$bdd;
-  }
-
-  /** Return all the vehicules in database
-   *@param empty
-   *@return array of objects
-   */
-  public function getAccounts() {
-    $accounts = [];
-    $reponse = $this->bdd->query('SELECT * FROM Accounts ORDER BY date_modif DESC');
-
-    while ($donnees = $reponse->fetch(PDO::FETCH_ASSOC)) {
-      $accounts[] = new Account($donnees);
+    public function __construct($bdd)
+    {
+        $this->setBdd($bdd);
     }
 
-    return $accounts;
-  }
+    /** Define bdd
+     *@param (bdd) Object PDO
+     *@return no return
+     */
+    public function setBdd($bdd)
+    {
+        $this->bdd=$bdd;
+    }
+
+    /** Return all the accounts in database
+     *@param empty
+     *@return array of objects
+     */
+    public function getAccounts()
+    {
+        $accounts = [];
+        $reponse = $this->bdd->query('SELECT * FROM Accounts ORDER BY date_modif DESC');
+
+        while ($donnees = $reponse->fetch(PDO::FETCH_ASSOC)) {
+            $accounts[] = new Account($donnees);
+        }
+
+        return $accounts;
+    }
+
+    /** add an account in the database
+     *@param array
+     *@return empty
+     */
+    public function addAccount($account)
+    {
+        $reponse=$this->bdd->prepare('INSERT INTO Accounts(nameUser,sold,dateModif) VALUES(:nameUser,:sold,NOW())');
+        $reponse->execute(array(
+'nameUser' => $account->getNameUser(),
+'sold' => $account->getSold()
+
+));
+    }
 }
- ?>
