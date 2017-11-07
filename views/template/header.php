@@ -16,3 +16,30 @@
         <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+      <header id="entete">
+
+
+
+      <nav class="navbar navbar-light bg-light flex-row">
+        <a class="navbar-brand" href="#"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+
+
+
+          <ul class="ml-auto nav nav-pills hidden-sm-down">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Créer un compte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dépot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Retrait</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Virement</a>
+            </li>
+          </ul>
+
+
+      </nav>
+  </header>

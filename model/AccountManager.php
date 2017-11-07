@@ -40,12 +40,12 @@ class AccountManager
      *@param object
      *@return object
      */
-    public function getThisAccount($account)
+    public function getThisAccount(Account $account)
     {
         $reponse = $this->bdd->prepare('SELECT * FROM Accounts WHERE idAccount = :id');
         $reponse->execute(['id' => $account->getIdAccount()]);
         $donnees = $reponse->fetch(PDO::FETCH_ASSOC);
-        $account = new Account($donnees);
+        $account->hydrate($donnees);
         return $account;
     }
 
@@ -53,7 +53,7 @@ class AccountManager
      *@param Object
      *@return empty
      */
-    public function addAccount($account)
+    public function addAccount(Account $account)
     {
         $reponse=$this->bdd->prepare('INSERT INTO Accounts(nameUser,sold,dateModif) VALUES(:nameUser,:sold,NOW())');
         $reponse->execute(array(
@@ -68,7 +68,7 @@ class AccountManager
          *@param object
          *@return empty
          */
-        public function updateAccount($account)
+        public function updateAccount(Account $account)
         {
             $reponse=$this->bdd->prepare('UPDATE Accounts set nameUser=:nameUser,sold=:sold,dateModif=NOW() WHERE idAccount=:id');
             $reponse->execute(array(
@@ -80,11 +80,11 @@ class AccountManager
       ));
         }
 
-        /** delete an accountin database
+        /** delete an account in database
          *@param object
          *@return empty
          */
-        public function deleteAccount($account)
+        public function deleteAccount(Account $account)
         {
             $reponse=$this->bdd->prepare('DELETE FROM Accounts WHERE idAccount = :id');
             $reponse->execute(array(
