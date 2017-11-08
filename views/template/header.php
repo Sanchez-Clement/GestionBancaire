@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
           <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -43,3 +43,6 @@
 
       </nav>
   </header>
+  <main class="container">
+
+    <h1 class="text-center">La banque qu'il vous faut</h1>
