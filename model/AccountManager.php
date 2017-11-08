@@ -27,7 +27,7 @@ class AccountManager
     public function getAccounts()
     {
         $accounts = [];
-        $reponse = $this->bdd->query('SELECT * FROM Accounts ORDER BY date_modif DESC');
+        $reponse = $this->bdd->query('SELECT * FROM Accounts ORDER BY dateModif DESC');
 
         while ($donnees = $reponse->fetch(PDO::FETCH_ASSOC)) {
             $accounts[] = new Account($donnees);
