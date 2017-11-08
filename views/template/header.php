@@ -9,6 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" type="text/css" href="../assets/css/flaticon.css"> 
         <!-- Place favicon.ico in the root directory -->
           <link rel="stylesheet" href="../assets/css/bootstrap.css">
         <link rel="stylesheet" href="../assets/css/normalize.css">

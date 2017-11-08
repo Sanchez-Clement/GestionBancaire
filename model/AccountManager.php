@@ -81,14 +81,14 @@ class AccountManager
         }
 
         /** delete an account in database
-         *@param object
+         *@param int
          *@return empty
          */
-        public function deleteAccount(Account $account)
+        public function deleteAccount($id)
         {
             $reponse=$this->bdd->prepare('DELETE FROM Accounts WHERE idAccount = :id');
             $reponse->execute(array(
-          'id' => $account->getIdAccount()
+          'id' => $id
         ));
         }
 }

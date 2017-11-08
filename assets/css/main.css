@@ -2,3 +2,11 @@
   background-image: url("../img/242.jpg");
   background-size: 110px;
 }
+
+.flaticon-transfer{
+  font-size: 6em;
+}
+
+#homePhone a:hover {
+  text-decoration: none ;
+}
