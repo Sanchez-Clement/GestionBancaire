@@ -9,7 +9,7 @@ $manager = new AccountManager ($bdd);
 
 // get all the accounts in bdd
 $accounts = $manager->getAccounts();
-var_dump($accounts);
+
 
 include "../views/home.php";
  ?>

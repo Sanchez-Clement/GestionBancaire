@@ -99,13 +99,17 @@ class Account
      */
     public function setSold($sold)
     {
-        $sold = (int) $sold;
+
         if ($sold >= -200) {
-            $this->sold = $sold;
+$sold = str_replace(',', '.',$sold);
+            $this->sold = floatval(number_format($sold, 2, '.', ' '));
 
             return $this;
         } elseif ($sold <= -200) {
           $error ="Le plafond est limité à 200 €";
+          return $error;
+        } else {
+          $error ="La transaction n'a pas aboutie";
           return $error;
         }
     }

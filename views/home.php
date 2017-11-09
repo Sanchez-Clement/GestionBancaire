@@ -24,7 +24,7 @@
          <?php echo "000" . $account->getIdAccount() ?>
        </td>
        <td>
-         <?php echo $account->getSolde() ?>
+         <?php echo $account->getSold() ?>
        </td>
 
        <td><a href="../controleur/deleteAcount.php?id=<?php echo $account->getIdAccount() ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
@@ -34,7 +34,7 @@
  </table>
 
 
- 
+
 
  <div class="row hidden-sm-up justify-content-around" id="homePhone">
 <a class="col-4 ml-4 text-center" href="../controllers/addAccount.php"><i class="flaticon-circle"></i></a>
