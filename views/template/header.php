@@ -38,7 +38,7 @@
               <a class="nav-link" href="withdrawal.php">Retrait</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Virement</a>
+              <a class="nav-link " href="transfer.php">Virement</a>
             </li>
 
           </ul>
