@@ -35,12 +35,12 @@
               <a class="nav-link"  href="addMoney.php" >Dépot</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Retrait</a>
+              <a class="nav-link" href="withdrawal.php">Retrait</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="#">Virement</a>
             </li>
-          
+
           </ul>
 
 
