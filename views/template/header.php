@@ -30,9 +30,7 @@
             <li class="nav-item active ">
               <a class="nav-link" href="addAccount.php" >Créer un compte<span class="sr-only">(current)</span></a>
             </li>
-            <?php  if (isset($accounts) && !empty($accounts)) {
 
-            ?>
             <li class="nav-item">
               <a class="nav-link"  href="addMoney.php" >Dépot</a>
             </li>
@@ -42,7 +40,7 @@
             <li class="nav-item">
               <a class="nav-link " href="#">Virement</a>
             </li>
-            <?php } ?>
+          
           </ul>
 
 

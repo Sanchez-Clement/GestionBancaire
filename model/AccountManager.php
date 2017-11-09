@@ -55,7 +55,7 @@ class AccountManager
      */
     public function addAccount(Account $account)
     {
-        $reponse=$this->bdd->prepare('INSERT INTO Accounts(nameUser,sold,dateModif) VALUES(:nameUser,:sold,NOW())');
+        $reponse=$this->bdd->prepare('INSERT INTO Accounts(nameUser,sold,dateModif) VALUES(:nameUser,:sold,CURRENT_TIMESTAMP)');
         $reponse->execute(array(
 'nameUser' => $account->getNameUser(),
 'sold' => $account->getSold()
@@ -70,7 +70,7 @@ class AccountManager
          */
         public function updateAccount(Account $account)
         {
-            $reponse=$this->bdd->prepare('UPDATE Accounts set nameUser=:nameUser,sold=:sold,dateModif=NOW() WHERE idAccount=:id');
+            $reponse=$this->bdd->prepare('UPDATE Accounts set nameUser=:nameUser,sold=:sold,dateModif=CURRENT_TIMESTAMP WHERE idAccount=:id');
             $reponse->execute(array(
     'id' => $account->getIdAccount(),
     'nameUser' => $account->getNameUser(),

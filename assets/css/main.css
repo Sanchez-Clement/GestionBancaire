@@ -15,3 +15,7 @@
 #addaccount,#addMoney {
   margin: 10px auto;
 }
+
+#tablehome {
+  overflow-x: scroll;
+}

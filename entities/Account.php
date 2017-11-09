@@ -100,9 +100,9 @@ class Account
     public function setSold($sold)
     {
 
-        if ($sold >= -200) {
+        if ($sold >= -200 && $sold <=100000) {
 $sold = str_replace(',', '.',$sold);
-            $this->sold = floatval(number_format($sold, 2, '.', ' '));
+            $this->sold = floatval(number_format($sold, 2, '.', ''));
 
             return $this;
         } elseif ($sold <= -200) {

@@ -7,17 +7,22 @@
 
                      <h3 class="mt-3 mb-4 text-center card-header">Créditer Compte</h3>
      				<div class="form-group">
- 						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+              <label for="">Compte à créditer : </label>
+ 						<select class="" name="idAccount">
+ 						  <?php foreach ($accounts as $key => $account) { ?>
+ 						   <option value="<?php echo $account->getIdAccount() ?>"><?php echo $account->getnameUser() ?> | <?php echo $account->getSold() ?> € </option>
+ 						<?php  } ?>
+ 						</select>
  					</div>
 
 
  					<div class="input-group">
- 						<input type="text" class="form-control" id="montant" name="montant" placeholder="Montant à créditer">
+ 						<input type="text" class="form-control"  name="deposit" placeholder="Montant à créditer">
             <div class="input-group-addon">€</div>
  					</div>
 
 
-         <button type="button" id="submit" name="submit" class="mt-4 mb-4 btn btn-primary">Ajouter</button>
+         <input type="submit" name="add" class="mt-4 mb-4 btn btn-primary" value="Ajouter" >
          </form>
      </div>
  </div>

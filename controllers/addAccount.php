@@ -6,8 +6,8 @@ if (isset($_POST['submit']) && !empty($_POST['nameUser'])) {
   require "../model/AccountManager.php";
   $account = new Account($_POST);
   $manager = new AccountManager($bdd);
-  var_dump($account);
   $manager->addAccount($account);
+// header('Location: home.php');
 
 
 }
