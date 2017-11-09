@@ -5,7 +5,7 @@
      <div class="form-area">
          <form   method="post">
 
-                     <h3 class="mt-3 mb-4 text-center card-header">Débiter Compte</h3>
+                     <h3 class="mt-3 mb-4 text-center card-header">Virement</h3>
      				<div class="form-group">
               <label for="">Compte à débiter : </label>
  						<select class="" name="idAccount">
@@ -17,7 +17,7 @@
           <p>Vers : </p>
           <div class="form-group">
             <label for="">Compte à créditer : </label>
-          <select class="" name="idAccount">
+          <select class="" name="idAccountB">
             <?php foreach ($accounts as $key => $account) { ?>
              <option value="<?php echo $account->getIdAccount() ?>"><?php echo $account->getnameUser() ?> | <?php echo $account->getSold() ?> € </option>
           <?php  } ?>
@@ -26,12 +26,15 @@
 
 
  					<div class="input-group">
- 						<input type="text" class="form-control"  name="withdraw" placeholder="Montant à débiter">
+ 						<input type="text" class="form-control"  name="transfer" placeholder="Montant à transfer">
             <div class="input-group-addon">€</div>
  					</div>
 
 
-         <input type="submit" name="remove" class="mt-4 mb-4 btn btn-primary" value="Retirer" >
+         <input type="submit" name="transferMoney" class="mt-4 mb-4 btn btn-primary" value="Transférer" >
          </form>
      </div>
  </div>
+ <?php
+   include_once("template/footer.php");
+  ?>

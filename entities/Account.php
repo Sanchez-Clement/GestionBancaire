@@ -106,7 +106,10 @@ $sold = str_replace(',', '.',$sold);
 
             return $this;
         } elseif ($sold <= -200) {
-          $error ="Le plafond est limité à 200 €";
+          $error ="Le plafond est limité à -200 €";
+          return $error;
+        } elseif ($sold >= 100000) {
+          $error ="Le plafond est limité à 100 000 €";
           return $error;
         } else {
           $error ="La transaction n'a pas aboutie";

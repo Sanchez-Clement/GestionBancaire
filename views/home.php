@@ -27,7 +27,7 @@
          <?php echo $account->getSold() ?>
        </td>
 
-       <td><a href="../controllers/deleteAccount.php?id=<?php echo $account->getIdAccount() ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+       <td><a onclick="return confirm('Voulez-vous supprimez votre compte ?')" href="../controllers/deleteAccount.php?id=<?php echo $account->getIdAccount() ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
      </tr>
      <?php } ?>
    </tbody>

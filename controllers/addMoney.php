@@ -11,17 +11,19 @@ $manager = new AccountManager ($bdd);
 $accounts = $manager->getAccounts();
 
 if (isset($_POST['add']) && !empty($_POST['deposit'])) {
-$deposit = floatval($_POST['deposit']) ;
+ $deposit = abs(floatval($_POST['deposit'])) ;
   $account = new Account($_POST);
   $account = $manager->getThisAccount($account);
 
-  $account->setSold($account->getSold() + $deposit);
-  
-$manager->updateAccount($account);
+$error =  $account->setSold($account->getSold() + $deposit);
+
+if (!is_string($error)) {
+  $manager->updateAccount($account);
+  header('Location: home.php');
+}
   // $manager = new AccountManager($bdd);
 
   // $manager->addAccount($account);
-header('Location: home.php');
 
 
 }

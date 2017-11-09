@@ -11,17 +11,21 @@ $manager = new AccountManager ($bdd);
 $accounts = $manager->getAccounts();
 
 if (isset($_POST['remove']) && !empty($_POST['withdraw'])) {
-$deposit = floatval($_POST['withdraw']) ;
+$withdraw = abs(floatval($_POST['withdraw']));
+
   $account = new Account($_POST);
   $account = $manager->getThisAccount($account);
 
-  $account->setSold($account->getSold() - $deposit);
+  $error = $account->setSold($account->getSold() - $withdraw);
 
-$manager->updateAccount($account);
+if (!is_string($error)) {
+  $manager->updateAccount($account);
+  header('Location: home.php');
+}
+
   // $manager = new AccountManager($bdd);
 
   // $manager->addAccount($account);
-header('Location: home.php');
 
 
 }

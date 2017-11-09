@@ -6,6 +6,7 @@
          <form action="addAccount.php" method="post">
 
                      <h3 class="mt-3 mb-4 text-center card-header">Ajouter compte</h3>
+                     <p class="error">   <?php if(isset($error)) {echo $error;} ?></p>
      				<div class="form-group">
  						<input type="text" class="form-control"  name="nameUser" placeholder="Name" required>
  					</div>

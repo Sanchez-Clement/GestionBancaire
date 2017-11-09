@@ -5,7 +5,9 @@
      <div class="form-area">
          <form  method="post">
 
+
                      <h3 class="mt-3 mb-4 text-center card-header">Créditer Compte</h3>
+                     <p class="error">   <?php if(isset($error)) {echo $error;} ?></p>
      				<div class="form-group">
               <label for="">Compte à créditer : </label>
  						<select class="" name="idAccount">
