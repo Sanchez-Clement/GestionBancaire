@@ -1,4 +1,5 @@
 <?php
+$error ="";
 require_once "../services/chargerClasse.php";
 spl_autoload_register('chargerClasse');
 require_once "../model/connexion_sql.php";
@@ -11,21 +12,31 @@ $manager = new AccountManager ($bdd);
 $accounts = $manager->getAccounts();
 
 if (isset($_POST['add']) && !empty($_POST['deposit'])) {
+
+  if(is_numeric($_POST['deposit'])) {
  $deposit = abs(floatval($_POST['deposit'])) ;
   $account = new Account($_POST);
-  $account = $manager->getThisAccount($account);
 
-$error =  $account->setSold($account->getSold() + $deposit);
 
-if (!is_string($error)) {
-  $manager->updateAccount($account);
-  header('Location: home.php');
-}
+
+
+    $account = $manager->getThisAccount($account);
+
+  $error =  $account->setSold($account->getSold() + $deposit);
+
+  if (!is_string($error)) {
+    $manager->updateAccount($account);
+    header('Location: home.php');
+  }
+
+
   // $manager = new AccountManager($bdd);
 
   // $manager->addAccount($account);
 
 
-}
+} else {
+$error = "Transaction impossible";
+} }
 require '../views/addMoney.php';
  ?>

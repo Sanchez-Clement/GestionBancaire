@@ -11,18 +11,26 @@ $manager = new AccountManager ($bdd);
 $accounts = $manager->getAccounts();
 
 if (isset($_POST['transferMoney']) && !empty($_POST['transfer'])) {
-  var_dump($_POST);
-$transfer = floatval($_POST['transfer']) ;
+
+$transfer = abs(floatval($_POST['transfer'])) ;
 
   $accountA = new Account($_POST);
   $accountA = $manager->getThisAccount($accountA);
   $_POST['idAccount'] = $_POST['idAccountB'];
   $accountB = new Account($_POST);
   $accountB = $manager->getThisAccount($accountB);
-$accountA->setSold($accountA->getSold() - $transfer);
-$accountB->setSold($accountB->getSold() + $transfer);
-$manager->updateAccount($accountA);
-$manager->updateAccount($accountB);
+$error = $accountA->setSold($accountA->getSold() - $transfer);
+if (!is_string($error)) {
+  $manager->updateAccount($accountA);
+  $error = $accountB->setSold($accountB->getSold() + $transfer);
+
+  if (!is_string($error)) {
+    $manager->updateAccount($accountB);
+    header('Location: home.php');
+  }
+}
+
+
 
 
 
@@ -32,7 +40,7 @@ $manager->updateAccount($accountB);
   // $manager = new AccountManager($bdd);
 
   // $manager->addAccount($account);
-header('Location: home.php');
+
 
 
 }
