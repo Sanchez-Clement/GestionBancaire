@@ -1,5 +1,5 @@
 <?php
-  include("template/header.php")
+  include_once("template/header.php")
  ?>
 
  <table class="table-hover table mt-2  display" id="tablehome">
@@ -11,7 +11,7 @@
    </thead>
    <tbody>
 
-     <!-- for eeach vehicule make a row -->
+     <!-- for eeach account make a row -->
      <?php foreach ($accounts as $key => $account) {
      ?>
 
@@ -33,13 +33,12 @@
    </tbody>
  </table>
 
- <div class="row hidden hidden-sm-down">
 
- </div>
+ 
 
  <div class="row hidden-sm-up justify-content-around" id="homePhone">
 <a class="col-4 ml-4 text-center" href="../controllers/addAccount.php"><i class="flaticon-circle"></i></a>
-<a class="col-4 mr-4  text-center" href="../controllers/addAccount.php"><i class="flaticon-piggybank"></i></a>
+<a class="col-4 mr-4  text-center" href="../controllers/addMoney.php"><i class="flaticon-piggybank"></i></a>
 <a class="col-4 ml-4 text-center" href="../controllers/addAccount.php"><i class="flaticon-atm-machine" aria-hidden="true"></i></a>
 <a class="col-4 mr-4  text-center" href="../controllers/addAccount.php"><i class="flaticon-euro"></i></a>
 
@@ -47,5 +46,5 @@
 
 
  <?php
-   include("template/footer.php")
+   include_once("template/footer.php")
   ?>

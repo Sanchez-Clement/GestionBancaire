@@ -1,11 +1,11 @@
 <?php
   include_once("template/header.php");
  ?>
- <div class="col-md-8 card" id="addaccount">
+ <div class="col-md-8 card" id="addMoney">
      <div class="form-area">
          <form  method="post">
 
-                     <h3 class="mt-3 mb-4 text-center card-header">Ajouter compte</h3>
+                     <h3 class="mt-3 mb-4 text-center card-header">Créditer Compte</h3>
      				<div class="form-group">
  						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
  					</div>

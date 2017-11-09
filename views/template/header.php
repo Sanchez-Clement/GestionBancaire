@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" type="text/css" href="../assets/css/flaticon.css"> 
+        <link rel="stylesheet" type="text/css" href="../assets/css/flaticon.css">
         <!-- Place favicon.ico in the root directory -->
           <link rel="stylesheet" href="../assets/css/bootstrap.css">
         <link rel="stylesheet" href="../assets/css/normalize.css">
@@ -21,17 +21,20 @@
 
 
 
-      <nav class="navbar navbar-light bg-light flex-row">
-        <a class="navbar-brand" href="#"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+      <nav class="navbar navbar-light bg-light flex-row ">
+        <a class="navbar-brand" href="home.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
 
 
 
-          <ul class="ml-auto nav nav-pills hidden-sm-down">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Créer un compte</a>
+          <ul class="ml-auto nav nav-pills hidden-sm-down" id="tabpills" >
+            <li class="nav-item active ">
+              <a class="nav-link" href="addAccount.php" >Créer un compte<span class="sr-only">(current)</span></a>
             </li>
+            <?php  if (isset($accounts) && !empty($accounts)) {
+
+            ?>
             <li class="nav-item">
-              <a class="nav-link" href="#">Dépot</a>
+              <a class="nav-link"  href="addMoney.php" >Dépot</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Retrait</a>
@@ -39,6 +42,7 @@
             <li class="nav-item">
               <a class="nav-link " href="#">Virement</a>
             </li>
+            <?php } ?>
           </ul>
 
 
