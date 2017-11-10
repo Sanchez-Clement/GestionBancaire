@@ -12,7 +12,7 @@
   text-decoration: none ;
 }
 
-#addaccount,#addMoney {
+#addaccount,#addMoney, #transfer, #withdraw {
   margin: 10px auto;
 }
 

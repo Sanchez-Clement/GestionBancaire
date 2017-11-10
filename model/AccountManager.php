@@ -64,31 +64,31 @@ class AccountManager
     }
 
 
-        /** update an account in database
-         *@param object
-         *@return empty
-         */
-        public function updateAccount(Account $account)
-        {
-            $reponse=$this->bdd->prepare('UPDATE Accounts set nameUser=:nameUser,sold=:sold,dateModif=CURRENT_TIMESTAMP WHERE idAccount=:id');
-            $reponse->execute(array(
+    /** update an account in database
+     *@param object
+     *@return empty
+     */
+    public function updateAccount(Account $account)
+    {
+        $reponse=$this->bdd->prepare('UPDATE Accounts set nameUser=:nameUser,sold=:sold,dateModif=CURRENT_TIMESTAMP WHERE idAccount=:id');
+        $reponse->execute(array(
     'id' => $account->getIdAccount(),
     'nameUser' => $account->getNameUser(),
     'sold' => $account->getSold(),
 
 
       ));
-        }
+    }
 
-        /** delete an account in database
-         *@param int
-         *@return empty
-         */
-        public function deleteAccount($id)
-        {
-            $reponse=$this->bdd->prepare('DELETE FROM Accounts WHERE idAccount = :id');
-            $reponse->execute(array(
+    /** delete an account in database
+     *@param int
+     *@return empty
+     */
+    public function deleteAccount($id)
+    {
+        $reponse=$this->bdd->prepare('DELETE FROM Accounts WHERE idAccount = :id');
+        $reponse->execute(array(
           'id' => $id
         ));
-        }
+    }
 }

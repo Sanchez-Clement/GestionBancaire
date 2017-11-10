@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" type="text/css" href="../assets/css/flaticon.css">
         <!-- Place favicon.ico in the root directory -->
@@ -17,9 +17,9 @@
         <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+
+
       <header id="entete">
-
-
 
       <nav class="navbar navbar-light bg-light flex-row ">
         <a class="navbar-brand" href="home.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
@@ -46,6 +46,7 @@
 
       </nav>
   </header>
+  
   <main class="container">
 
     <h1 class="text-center">La banque qu'il vous faut</h1>
