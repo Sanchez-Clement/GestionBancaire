@@ -22,25 +22,25 @@
       <header id="entete">
 
       <nav class="navbar navbar-light bg-light flex-row ">
-        <a class="navbar-brand" href="home.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+        <a title="Accueil" class="navbar-brand" href="home.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
 
 
 
           <ul class="ml-auto nav nav-pills hidden-sm-down" id="tabpills" >
             <li class="nav-item active ">
-              <a class="nav-link" href="addAccount.php" >Créer un compte<span class="sr-only">(current)</span></a>
+              <a title="Ajouter un compte" class="nav-link" href="addAccount.php" >Créer un compte<span class="sr-only">(current)</span></a>
             </li>
 <?php if (isset($_SESSION['account'])): ?>
 
 
             <li class="nav-item">
-              <a class="nav-link"  href="addMoney.php" >Dépot</a>
+              <a title="Dépot" class="nav-link"  href="addMoney.php" >Dépot</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="withdrawal.php">Retrait</a>
+              <a title="Retrait" class="nav-link" href="withdrawal.php">Retrait</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="transfer.php">Virement</a>
+              <a title="Virement" class="nav-link " href="transfer.php">Virement</a>
             </li>
 <?php endif; ?>
           </ul>
