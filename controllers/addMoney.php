@@ -1,4 +1,5 @@
 <?php
+session_start();
 $error ="";
 require_once "../services/chargerClasse.php";
 spl_autoload_register('chargerClasse');
@@ -35,7 +36,7 @@ if (isset($_POST['add']) && !empty($_POST['deposit'])) {
         }
 
 
-      
+
     } else {
         $error = "Transaction impossible";
     }

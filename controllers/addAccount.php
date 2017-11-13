@@ -1,4 +1,5 @@
 <?php
+session_start();
 // verify you have click on the button submit and if you give a namespace
 //
 if (isset($_POST['submit']) && !empty($_POST['nameUser'])) {

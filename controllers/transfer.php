@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../services/chargerClasse.php";
 spl_autoload_register('chargerClasse');
 require_once "../model/connexion_sql.php";

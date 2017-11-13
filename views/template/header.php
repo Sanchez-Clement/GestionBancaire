@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Gestion bancaire</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -30,6 +30,8 @@
             <li class="nav-item active ">
               <a class="nav-link" href="addAccount.php" >Créer un compte<span class="sr-only">(current)</span></a>
             </li>
+<?php if (isset($_SESSION['account'])): ?>
+
 
             <li class="nav-item">
               <a class="nav-link"  href="addMoney.php" >Dépot</a>
@@ -40,13 +42,13 @@
             <li class="nav-item">
               <a class="nav-link " href="transfer.php">Virement</a>
             </li>
-
+<?php endif; ?>
           </ul>
 
 
       </nav>
   </header>
-  
+
   <main class="container">
 
     <h1 class="text-center">La banque qu'il vous faut</h1>
